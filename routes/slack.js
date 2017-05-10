@@ -32,7 +32,7 @@ router.post('/', (req,res,next)=>{
 		if(err)
 			console.log(err);
 		// console.log(res);
-		console.log(`Sent a response to ${endpoint}`);
+		console.log(`Sent a response to ${response_endpoint}`);
 		console.log(responseBody);
 	})
 
