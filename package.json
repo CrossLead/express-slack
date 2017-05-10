@@ -1,0 +1,36 @@
+{
+  "name": "express-slack",
+  "version": "1.0.0",
+  "description": "Middleware for Slack slash commands",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrossLead/express-slack.git"
+  },
+  "keywords": [
+    "express",
+    "slack",
+    "middleware",
+    "microservice"
+  ],
+  "author": "Gabriel Szczepanek",
+  "license": "Apache License",
+  "bugs": {
+    "url": "https://github.com/CrossLead/express-slack/issues"
+  },
+  "homepage": "https://github.com/CrossLead/express-slack#readme",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "nodemon": "^1.11.0",
+    "serve-favicon": "~2.4.2"
+  }
+}
