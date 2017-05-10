@@ -21,20 +21,23 @@ router.post('/', (req,res,next)=>{
 
 	const endpoint = requestBody.response_url;
 
-
-	console.log(req);
 	console.log(requestBody);
+
+	// send a good status back to slack
+	res.sendStatus(200);
 
 	responseBody.text = "You successfully made a round-trip request! :D";
 
 	request.post({
 		headers: {'content-type':'application/json'},
 		url: endpoint,
-		body: responseBody
+		json: responseBody
 	}, (err,res,body)=>{
 		if(err)
 			console.log(err);
-		console.log(res);
+		// console.log(res);
+		console.log(`Sent a response to ${endpoint}`);
+		console.log(responseBody);
 	})
 
 });
