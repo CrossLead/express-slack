@@ -20,9 +20,6 @@ router.post('/', (req,res,next)=>{
 	const requestBody = req.body;
 	const response_endpoint = requestBody.response_url;
 
-	// send a good status back to slack
-	res.sendStatus(200);
-
 	console.log(requestBody);
 
 	const responseBody = clp.getSlackResponse(requestBody.text);
@@ -38,6 +35,9 @@ router.post('/', (req,res,next)=>{
 		console.log(`Sent a response to ${endpoint}`);
 		console.log(responseBody);
 	})
+
+	// send a good status back to slack
+	res.sendStatus(200);
 
 });
 
