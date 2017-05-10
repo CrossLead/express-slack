@@ -3,7 +3,7 @@ const that = {};
 that.getSlackResponse = (commandText) => {
 	const responseBody = {};
 
-	responseBody.text = "Gabe says hi!";
+	//responseBody.text = "";
 	responseBody.attachments = [
 		{
 			color: 'good',
