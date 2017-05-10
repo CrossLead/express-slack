@@ -37,7 +37,7 @@ router.post('/', (req,res,next)=>{
 	})
 
 	// send a good status back to slack
-	res.sendStatus(200);
+	res.sendStatus(200).send(`${requestBody.command} ${requestBody.text}`);
 
 });
 
