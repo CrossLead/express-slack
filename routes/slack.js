@@ -3,17 +3,6 @@ const router = express.Router();
 const request = require('request');
 const clp = require('../plugins/clp.js');
 
-// { token: 'u3yVE3pr48uITzYudLdMgG30',
-//   team_id: 'T039BB39F',
-//   team_domain: 'crosslead',
-//   channel_id: 'D5AJTKUDB',
-//   channel_name: 'directmessage',
-//   user_id: 'U5ADVUXGT',
-//   user_name: 'gabriels',
-//   command: '/clp',
-//   text: 'example command text',
-//   response_url: 'https://hooks.slack.com/commands/T039BB39F/181053241776/o2Yfc8v7j1EsEva1Y4bAMlEr' }
-
 /* Slack Routes */
 
 router.post('/', (req,res,next)=>{
@@ -42,3 +31,4 @@ router.post('/', (req,res,next)=>{
 });
 
 module.exports = router;
+
