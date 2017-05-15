@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
 /**
+ * Load Configuration Vars
+ */
+require('dotenv').config();
+
+/**
  * Module dependencies.
  */
 
