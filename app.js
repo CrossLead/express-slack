@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 
 /** Import Routes */
 const index = require('./routes/index');
-const users = require('./routes/users');
 const example = require('./routes/example');
 const slack = require('./routes/slack');
 
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /** Register Routes */
 app.use('/', index);
-app.use('/users', users);
 app.use('/example', example);
 app.use('/slack', slack);
 
