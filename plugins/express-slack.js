@@ -10,20 +10,25 @@ slackApp.command = (slashCmd, handler) => {
 	registeredCommands.set(slashCmd, handler);
 
 	// use the middleware
-	slackApp.use(middlewareDriver);
+	slackApp.use(middlewareDriver(slashCmd));
 }
 
 /* Middleware Function */
-const middlewareDriver = (req,res,next)=>{
-	const payload = req.body;
-	let cmdHandler = registeredCommands.get(payload.command);
-	if(cmdHandler){
-		function message(slackReply){
-			postToSlack(payload.response_url, slackReply);
+const middlewareDriver = (slashCmd) => {
+	const myCommand = slashCmd;
+	return (req,res,next)=>{
+		const payload = req.body;
+		if(payload.command === myCommand){
+			let cmdHandler = registeredCommands.get(payload.command);
+			if(cmdHandler){
+				function message(slackReply){
+					postToSlack(payload.response_url, slackReply);
+				}
+				cmdHandler(payload, message);
+			}
 		}
-		cmdHandler(payload, message);
+		next();
 	}
-	next();
 }
 
 const postToSlack = (endpoint, msg) => {
